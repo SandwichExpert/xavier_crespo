@@ -1,6 +1,6 @@
 const path = require('path')
 require('dotenv').config({ path: path.join(__dirname, '.env') })
-
+const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const cookieParser = require('cookie-parser')
@@ -35,7 +35,55 @@ app.use(
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(cookieParser())
+app.use(cookieParser());
+
+//Nodemailer 
+app.post('/api/form', (req,res)=>{
+  nodemailer.createTestAccount((err,account)=>{
+    const htmlEmail = `
+      <h3>Contact Details</h3>
+      <ul>
+        <li>Name: ${req.body.name}</li>
+        <li>Email: ${req.body.email}</li>
+      </ul>
+      <h3>Message</h3>
+      <h5>Subject: ${req.body.subject}</h5>
+      <p>${req.body.message}</p>
+    `
+
+    let transporter= nodemailer.createTransport({
+      // host: 'smtp.ethereal.email',
+      //   port: 587,
+      //   secure: false, // true for 465, false for other ports
+      //   auth:{
+      //     user : "carson28@ethereal.email",
+      //     pass:'jcNRz2FK56hJAmX4hg'
+      //   }
+   
+      service: "gmail",
+    auth: {
+        user: "xavier.crespo1@gmail.com",
+        pass: process.env.GMAIL_PASSWORD
+    }
+    })
+    let mailOptions={
+      from: req.body.email,
+      to :"xavier.crespo1@gmail.com",
+      replyTo : req.body.email,
+      subject : req.body.subject,
+      text : req.body.message,
+      html : htmlEmail
+    }
+    transporter.sendMail(mailOptions,(err,info)=>{
+      if(err){
+        return(console.log(err))
+      }
+      else res.json({msg:"success"});
+      console.log(info);
+      
+    });
+  });
+});
 
 // Set the public folder to "~/client/build/"
 // Example: http://localhost:5000/favicon.ico => Display "~/client/build/favicon.ico"
@@ -52,9 +100,9 @@ app.use(
 )
 require('./passport')(app)
 
-app.use('/api', require('./routes/index'))
-app.use('/api', require('./routes/auth'))
-app.use('/api/countries', require('./routes/countries'))
+
+// app.use('/api', require('./routes/auth'))
+// app.use('/api/countries', require('./routes/countries'))
 
 // For any routes that starts with "/api", catch 404 and forward to error handler
 app.use('/api/*', (req, res, next) => {

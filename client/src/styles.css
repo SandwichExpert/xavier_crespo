@@ -1,0 +1,384 @@
+* {
+  box-sizing: border-box;
+}
+
+body{margin:0;}
+
+/* Nav Bar */
+
+.nav__container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 80px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  min-height: 500px;
+  background: #286f62;
+  color: #EEEEEE;
+}
+
+.nav__top {
+  padding: 15px;
+}
+
+.nav__middle {
+  display: flex;
+  flex-flow: column wrap;
+  color: #EEEEEE;
+}
+
+.nav__bottom {
+  display: flex;
+  flex-flow: column wrap;
+  color: #EEEEEE;
+}
+
+NavLink:hover{
+  color:white;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #EEEEEE;
+  font-size: 0.9em;
+  text-align: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.navLink:hover {
+  font-weight: 700;
+  content:"Casa";
+}
+
+/*Pages General settings*/
+
+/*DarkMode Switch */
+.darkMode {
+  right: 20px;
+  position: absolute;
+  margin-top: 20px;
+  z-index: 3;
+  width: 60px;
+  height: 34px;
+  display: inline-block;
+}
+
+.icon {
+  right: 45px;
+  position: absolute;
+  margin-top: 25px;
+  z-index: 3;
+  width: 60px;
+  height: 34px;
+  display: inline-block;
+}
+
+/* Hide default HTML checkbox */
+.switchButton {
+  top: 20px;
+  right: 20px;
+  position: absolute;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(36, 38, 49);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.75);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+
+
+input:checked+.slider {
+  background-color: #CCCCCC;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px rgb(36, 38, 49);
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+.container__dark {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: rgb(36, 38, 49);
+  color: #EEEEEE;
+}
+
+.container__light {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: #EEEEEE;
+  color: rgb(36, 38, 49);
+}
+
+.contactForm{
+  display:flex;
+  flex-flow:column wrap;
+}
+
+.page__container {
+  height: 100vh;
+  width: 100vw;
+  margin-left: 80px;
+
+}
+
+/*Home Page*/
+.welcome {
+  margin-top: 10%;
+  margin-left: 80px;
+}
+
+.main__title {
+  font-size: 4.5em;
+}
+
+.main__subtitle {
+  font-size: 3em;
+  font-weight: 250;
+}
+
+.main__desc {
+  font-size: 2em;
+  font-weight: 150;
+}
+
+/*About Section*/
+
+.about__me{
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:flex-start;
+  margin-bottom:40px;
+  max-height:350px;
+}
+
+.picture{
+  min-width : 250px;
+  max-height:350px;
+  background-image : url("./images/profile.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right:55px;
+  border-radius:15px;
+}
+
+.button__styled{
+  background-color:#286f62;
+  color:white;
+  border:none;
+  font-size:1.25em;
+  padding: 15px 35px;
+  border-radius: 10px;
+  border: 2px solid #286f62;
+}
+
+.button__styled:hover{
+  background:none;
+  border:solid 2px #286f62;
+  color : #286f62
+}
+
+.buttons{
+  margin-top:35px;
+}
+
+.is-active{
+  font-weight : bold;
+}
+
+
+
+button:hover{
+  cursor: pointer;
+}
+
+.picture__passion{
+  min-width : 250px;
+  max-height:350px;
+  background-image : url("./images/concert.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right:55px;
+  border-radius:15px;
+}
+
+.link{
+  text-decoration : none;
+  font-weight: bold;
+  color: #286f62;
+}
+
+.about__section{
+  display:flex;
+  flex-flow:column wrap;
+  max-width:550px;
+}
+
+.about{
+  display:flex;
+  flex-flow:column wrap;
+}
+
+.skills{
+  display:flex;
+  flex-flow : row wrap;
+  justify-content: flex-start;
+  margin-bottom:35px;
+}
+
+.languages{
+  margin-right:35px;
+  display:flex;
+  flex-flow:column wrap;
+  justify-content: flex-start;
+  border:1px solid #08FDD8;
+  padding:15px;
+  max-height:550px;
+  border-radius:25px;
+}
+
+.languages:hover{
+  box-shadow: 0px 0px 10px 0px #08FDD8;
+}
+
+.languages p{
+  margin : 5px 0;
+}
+
+/* Projects */
+
+.card-container{
+  width:300px;
+  height:400px;
+  perspective: 900px;
+  background-color:transparent;
+  margin-right : 20px;
+}
+
+.card{
+  position : relative;
+  width: 100%;
+  height : 100%;
+  transition: all 0.7s;
+  transform-style: preserve-3d;
+}
+
+.card-container:hover .card{
+  transform: rotateY(-180deg);
+}
+
+.front{
+  background: linear-gradient(90deg, #fdc908,#fcc603);
+  display:flex;
+  flex-flow: column wrap;
+}
+.work{
+  display:flex;
+  flex-flow : row wrap;
+}
+
+
+
+.back{
+  background:linear-gradient(90deg, #286f62,#1c4e49);
+  transform : rotateY(-180deg);
+  display:flex;
+  flex-flow: column wrap;
+}
+
+.back__text{
+  width:70%;
+  font-size:0.8em;
+}
+
+.portfolink{
+  text-decoration : none;
+  color: white;
+}
+
+.portfolink:hover{
+  color:white;
+}
+
+.project__image{
+  width : 100px; height:100px;
+  border-radius : 100%;
+  border : white 3px solid;
+}
+
+.project__pic{
+  object-fit: cover;
+  border-radius: 50%;
+
+}
+
+.project__title{
+  margin-top:30px;
+  text-align:center;
+}
+
+.front, .back{
+  position:absolute;
+  width : 100%; height : 100%;
+  display:flex;
+  align-items:center;
+  justify-content : flex-start;
+  padding-top:25px;
+  color : white; 
+  border-radius : 4px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19),
+              0 6px 6px rgba(0,0,0,0.23);
+  backface-visibility:hidden;
+}
