@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import { css } from "glamor";
 
 const style = {
@@ -10,7 +10,7 @@ const style = {
   }
 };
 
-const MainNavBar = () => {
+export default function MainNavBar(){
   const [isSelected, setIsSelected] = useState(null);
 
   function handleClick(e) {
@@ -108,5 +108,3 @@ const MainNavBar = () => {
     </div>
   );
 };
-
-export default MainNavBar;
