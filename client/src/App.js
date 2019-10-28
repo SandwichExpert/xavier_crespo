@@ -3,7 +3,7 @@ import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Work from "./components/pages/Work";
 import Contact from './components/pages/Contact'
-import MainNavBar from "./components/MainNavBar";
+import MainNavBar from "./components/pages/MainNavBar";
 import "./styles.css";
 import { Route, Switch } from "react-router-dom";
 
