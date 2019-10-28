@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function Work() {
   return (
@@ -44,22 +44,21 @@ export default function Work() {
                 <div className="project__image">
                   <img 
                   className="project__pic"
-                  src="./jab.png" alt="project" />
+                  src="./jabbed.png" alt="project" style={{height:"100%",width:"100%", size:"cover", overflow:"hidden", backgroundColor:"black"}}/>
                 </div>
                 <div className="project__title">
                   <h3>JAB</h3><br/>
-                  A martial arts news hub made with <b>HBS</b>
+                  A full-stack martial arts news hub made with <b>HBS</b>
                 </div>
                 
 
               </div>
               <div className="back">
-                <h4>Ironhack Project #1</h4>
+                <h4>Ironhack Project #2</h4>
                 <div className="back__text">
-                This was my very first Ironhack project. A short jRPG, greatly inspired by games such as Final Fantasy or Chrono Trigger that I entirely coded in HTML, CSS and JavaScript (no frameworks).<br/>
-                I also wrote and recorded the entire soundtrack.<br/>
+                As a team of three, we created a full-stack app gathering news from APIs. Each user could filter the news they wanted to see and set their preferences on given sports or martial artists.<br/>
                 <br/>
-                <a href="https://sandwichexpert.github.io/Patxi_Patxaran/" className="portfolink"><h5>Link to the game</h5></a>
+                <a href="https://jabironhack.herokuapp.com" className="portfolink"><h5>Link to the app</h5></a>
                 </div>
               </div>
             </div>
@@ -83,12 +82,11 @@ export default function Work() {
 
               </div>
               <div className="back">
-                <h4>Ironhack Project #1</h4>
+                <h4>Ironhack Project #3</h4>
                 <div className="back__text">
-                This was my very first Ironhack project. A short jRPG, greatly inspired by games such as Final Fantasy or Chrono Trigger that I entirely coded in HTML, CSS and JavaScript (no frameworks).<br/>
-                I also wrote and recorded the entire soundtrack.<br/>
+                This was our final project with Ironhack. We were two working on it. It is an app allowing people to creating events and vote for locations on a map. Each event has a dedicated chat room allowing everyone to converse on the choice to make.
                 <br/>
-                <a href="https://sandwichexpert.github.io/Patxi_Patxaran/" className="portfolink"><h5>Link to the game</h5></a>
+                <a href="https://maptee.herokuapp.com" className="portfolink"><h5>Link to the game</h5></a>
                 </div>
               </div>
             </div>

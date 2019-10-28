@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import MainNavBar from "./components/MainNavBar";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Work from "./components/pages/Work";
 import Contact from './components/pages/Contact'
+import MainNavBar from "./components/MainNavBar";
 import "./styles.css";
 import { Route, Switch } from "react-router-dom";
 
@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className={isDark === "dark" ? "container__dark" : "container__light"}>
-      <div className="siwtchButton">
+      <div className="switchButton">
         <div className="icon">
           {isDark === "dark" ? (
             <>
